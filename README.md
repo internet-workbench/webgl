@@ -1,2 +1,2 @@
 # webgl
-webgl related
+This repos holds webgl related tools, apps, and samples.
