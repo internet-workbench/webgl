@@ -38,7 +38,7 @@ define([
 
 	function animateCube() {
 
-		requestAnimationFrame( animate );
+		requestAnimationFrame( animateCube );
 
 		mesh.rotation.x += 0.005;
 		mesh.rotation.y += 0.01;
