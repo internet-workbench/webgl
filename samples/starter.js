@@ -18,7 +18,9 @@ define([
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( w, h );
 		var ele = $("#" + id);
-		console.log("render id:" + ele.length)
+		var iw = ele.width();
+		var ih = ele.height();
+		console.log("iw:" + iw + " ih:" +ih);
 		ele.append(renderer.domElement);
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
