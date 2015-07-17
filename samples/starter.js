@@ -26,7 +26,7 @@ define([
 
 		scene = new THREE.Scene();
 
-		var geometry = new THREE.BoxGeometry( 200, 200, 200 );
+		var geometry = new THREE.BoxGeometry( 50, 50, 50 );
 
 		var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
 		texture.anisotropy = renderer.getMaxAnisotropy();
