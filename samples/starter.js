@@ -4,4 +4,63 @@ define([
         'git/libs/master/threejs.org/stats/1.0.0/stats-1.0.0'
        ], function(THREE, Detector, Stats) {
 	console.log("loaded webgl starter");
+	
+	var camera, scene, renderer;
+	var mesh;
+	
+	var w = 200;
+	var h = 300;
+
+	function initCube(id) {
+
+		renderer = new THREE.WebGLRenderer();
+		renderer.setPixelRatio( window.devicePixelRatio );
+		renderer.setSize( w, h );
+		$("#" + id).appendChild( renderer.domElement );
+
+		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
+		camera.position.z = 400;
+
+		scene = new THREE.Scene();
+
+		var geometry = new THREE.BoxGeometry( 200, 200, 200 );
+
+		var texture = THREE.ImageUtils.loadTexture( 'https://rawgit.com/internet-workbench/webgl/master/textures/crate.gif' );
+		texture.anisotropy = renderer.getMaxAnisotropy();
+
+		var material = new THREE.MeshBasicMaterial( { map: texture } );
+
+		mesh = new THREE.Mesh( geometry, material );
+		scene.add( mesh );
+
+	}
+
+	function animateCube() {
+
+		requestAnimationFrame( animate );
+
+		mesh.rotation.x += 0.005;
+		mesh.rotation.y += 0.01;
+
+		renderer.render( scene, camera );
+
+	}
+
+	var g = {
+		 events: {
+	      "startCube" : function(e) {
+	        var env = e.env;
+	        var config = e.config;
+	        var model = e.model;
+	        var mod = e.args[0];
+	        var fun = e.args[1];
+	        var id = e.args[2];
+	      	initCube(id);
+	      	animateCube();
+	      }
+	   }
+	}
+	
+	return g;
+
 });
