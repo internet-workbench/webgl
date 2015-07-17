@@ -17,7 +17,7 @@ define([
 		renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( w, h );
-		$("#" + id).appendChild( renderer.domElement );
+		$("#" + id).append( $(renderer.domElement) );
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
 		camera.position.z = 400;
@@ -56,6 +56,7 @@ define([
 	        var mod = e.args[0];
 	        var fun = e.args[1];
 	        var id = e.args[2];
+	        console.log("id:" + id);
 	      	initCube(id);
 	      	animateCube();
 	      }
