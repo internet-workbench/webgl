@@ -28,7 +28,8 @@ define([
 
 		var geometry = new THREE.BoxGeometry( 50, 50, 50 );
 
-		var texture = THREE.ImageUtils.crossOrigin('anonymous').loadTexture( prefix + 'textures/crate.gif' );
+		THREE.ImageUtils.crossOrigin = 'anonymous';
+		var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
 		texture.anisotropy = renderer.getMaxAnisotropy();
 
 		var material = new THREE.MeshBasicMaterial( { map: texture } );
