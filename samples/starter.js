@@ -10,6 +10,7 @@ define([
 	
 	var w = 200;
 	var h = 300;
+	var prefix = "https://rawgit.com/internet-workbench/webgl/master/";
 
 	function initCube(id) {
 
@@ -25,7 +26,7 @@ define([
 
 		var geometry = new THREE.BoxGeometry( 200, 200, 200 );
 
-		var texture = THREE.ImageUtils.loadTexture( 'https://rawgit.com/internet-workbench/webgl/master/textures/crate.gif' );
+		var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
 		texture.anisotropy = renderer.getMaxAnisotropy();
 
 		var material = new THREE.MeshBasicMaterial( { map: texture } );
