@@ -18,6 +18,7 @@ define([
 		renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( w, h );
+		renderer.setClearColor( 0xffffff );
 		var ele = $("#" + id);
 		ele.append(renderer.domElement);
 
