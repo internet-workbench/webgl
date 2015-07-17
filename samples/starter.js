@@ -8,7 +8,7 @@ define([
 	var camera, scene, renderer;
 	var mesh;
 	
-	var w = 200;
+	var w = 300;
 	var h = 300;
 	var prefix = "https://rawgit.com/internet-workbench/webgl/master/";
 
@@ -18,9 +18,6 @@ define([
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( w, h );
 		var ele = $("#" + id);
-		var iw = ele.width();
-		var ih = ele.height();
-		console.log("iw:" + iw + " ih:" +ih);
 		ele.append(renderer.domElement);
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
@@ -61,9 +58,11 @@ define([
 	        var mod = e.args[0];
 	        var fun = e.args[1];
 	        var id = e.args[2];
-	        console.log("id:" + id);
+	        var card = e.args[3];
+	        console.log("id:" + id + " cardSize:" + card.cardSize);
 	      	initCube(id);
 	      	animateCube();
+	      	model.cubeStarted = true;
 	      }
 	   }
 	}
