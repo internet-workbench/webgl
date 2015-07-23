@@ -1,4 +1,5 @@
 <div>
+  <p>{{test.title}}</p>
   <button ng-hide="model.cubeStarted || env.env != 'web'" class="btn-default btn btn-sm streamz-card-btn" ng-click="moduleEvent('git/webgl/master/samples/starter','startCube','wgl-cube', card)">Load Cube</button>
   <button ng-hide="model.cubeStarted || env.env != 'mobile'" class="button-clear streamz-card-button" ng-click="moduleEvent('git/webgl/master/samples/starter','startCube','wgl-cube', card)">Load Cube</button>
   <div id="wgl-cube"></div>
