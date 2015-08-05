@@ -23,7 +23,7 @@ define([
 		ele.append(renderer.domElement);
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
-		camera.position.z = 400;
+		camera.position.z = 1000;
 
 		scene = new THREE.Scene();
 
@@ -35,13 +35,13 @@ define([
 		var geometry1 = new THREE.SphereGeometry( 50, 32, 32 ); 
 		var material1 = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
 		var sphere1 = new THREE.Mesh( geometry, material ); 
-		sphere1.position = new THREE.Vector3( 200, 200, 200 );
+		sphere1.position = new THREE.Vector3( 100, 100, 100 );
 		scene.add( sphere1 );
 		
 		var geometry2 = new THREE.SphereGeometry( 50, 32, 32 ); 
 		var material2 = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
 		var sphere2 = new THREE.Mesh( geometry, material ); 
-		sphere2.position = new THREE.Vector3( 300, 300, 300 );
+		sphere2.position = new THREE.Vector3( -100, -100, -100 );
 		scene.add( sphere2 );
 		
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
