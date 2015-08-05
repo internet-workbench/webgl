@@ -57,12 +57,12 @@ define([
  		  sphere.position.setX(planet.position.x);
 		}
 		
-		var light = new THREE.PointLight( 0xffffff, 1, 100 );
-		light.position.set( 50, 50, 50 );
-		scene.add( light );
+		//var light = new THREE.PointLight( 0xffffff, 1, 100 );
+		//light.position.set( 50, 50, 50 );
+		//scene.add( light );
 
 		var light1 = new THREE.PointLight( 0xffffff, 1, 100 );
-		light1.position.set( -50, -50, -50 );
+		light1.position.set( 0, 0, -50 );
 		scene.add( light1 );
 
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
