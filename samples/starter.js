@@ -51,7 +51,7 @@ define([
 		for (i=0; i<planets.length; i++) {
 		  var planet = planets[i];
   		  var geometry = new THREE.SphereGeometry( planet.size, 32, 32 ); 
-		  var material = new THREE.MeshBasicMaterial( {color: planet.color} ); 
+		  var material = new THREE.MeshLambertMaterial( {color: planet.color} ); 
 		  var sphere = new THREE.Mesh( geometry, material ); 
 		  scene.add( sphere );
  		  sphere.position.setX(planet.position.x);
