@@ -27,16 +27,19 @@ define([
 
 		scene = new THREE.Scene();
 
-		var geometry = new THREE.BoxGeometry( 200, 200, 200 );
+		var geometry = new THREE.SphereGeometry( 5, 32, 32 ); 
+		var material = new THREE.MeshBasicMaterial( {color: 0xffff00} ); 
+		var sphere = new THREE.Mesh( geometry, material ); 
+		scene.add( sphere );
+		
+		//THREE.ImageUtils.crossOrigin = 'anonymous';
+		//var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
+		//texture.anisotropy = renderer.getMaxAnisotropy();
 
-		THREE.ImageUtils.crossOrigin = 'anonymous';
-		var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
-		texture.anisotropy = renderer.getMaxAnisotropy();
+		//var material = new THREE.MeshBasicMaterial( { map: texture } );
 
-		var material = new THREE.MeshBasicMaterial( { map: texture } );
-
-		mesh = new THREE.Mesh( geometry, material );
-		scene.add( mesh );
+		//mesh = new THREE.Mesh( geometry, material );
+		//scene.add( mesh );
 
 	}
 
