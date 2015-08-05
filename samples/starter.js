@@ -47,8 +47,8 @@ define([
 
 		requestAnimationFrame( animateCube );
 
-		mesh.rotation.x += 0.005;
-		mesh.rotation.y += 0.01;
+		//mesh.rotation.x += 0.005;
+		//mesh.rotation.y += 0.01;
 
 		renderer.render( scene, camera );
 
