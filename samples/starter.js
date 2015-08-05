@@ -13,7 +13,7 @@ define([
 	var h = 300;
 	var prefix = "https://rawgit.com/internet-workbench/webgl/master/";
 
-	function initCube(id) {
+	function initScene(id,width,height) {
 
 		renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
@@ -21,6 +21,9 @@ define([
 		renderer.setClearColor( 0 );
 		var ele = $("#" + id);
 		ele.append(renderer.domElement);
+		
+		if (width) w = width;
+		if (height) w = height;
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
 		camera.position.z = 600;
@@ -65,9 +68,9 @@ define([
 
 	}
 
-	function animateCube() {
+	function animateScene() {
 
-		requestAnimationFrame( animateCube );
+		requestAnimationFrame( animateScene );
 
 		//mesh.rotation.x += 0.005;
 		//mesh.rotation.y += 0.01;
@@ -78,7 +81,7 @@ define([
 
 	var g = {
 		 events: {
-	      "startCube" : function(e) {
+	      "startScene" : function(e) {
 	        var env = e.env;
 	        var config = e.config;
 	        var model = e.model;
@@ -87,9 +90,9 @@ define([
 	        var id = e.args[2];
 	        var card = e.args[3];
 	        console.log("id:" + id + " cardSize:" + card.cardSize);
-	      	initCube(id);
-	      	animateCube();
-	      	model.cubeStarted = true;
+	      	initScene(id, card.width, card.height);
+	      	animateScene();
+	      	model.sceneStarted = true;
 	      }
 	   }
 	}
