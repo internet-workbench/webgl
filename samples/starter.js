@@ -23,7 +23,7 @@ define([
 		ele.append(renderer.domElement);
 		
 		if (width) w = width;
-		if (height) w = height;
+		if (height) h = height;
 
 		camera = new THREE.PerspectiveCamera( 70, w / h, 1, 1000 );
 		camera.position.z = 600;
