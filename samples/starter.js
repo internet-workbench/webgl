@@ -32,17 +32,17 @@ define([
 		var sphere = new THREE.Mesh( geometry, material ); 
 		scene.add( sphere );
 
-		geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
-		material = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
-		sphere = new THREE.Mesh( geometry, material ); 
-		sphere.position = new THREE.Vector3( 200, 0, 0 );
-		scene.add( sphere );
+		var geometry1 = new THREE.SphereGeometry( 50, 32, 32 ); 
+		var material1 = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
+		var sphere1 = new THREE.Mesh( geometry, material ); 
+		sphere1.position = new THREE.Vector3( 200, 200, 200 );
+		scene.add( sphere1 );
 		
-		geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
-		material = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
-		sphere = new THREE.Mesh( geometry, material ); 
-		sphere.position = new THREE.Vector3( 300, 0, 0 );
-		scene.add( sphere );
+		var geometry2 = new THREE.SphereGeometry( 50, 32, 32 ); 
+		var material2 = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
+		var sphere2 = new THREE.Mesh( geometry, material ); 
+		sphere2.position = new THREE.Vector3( 300, 300, 300 );
+		scene.add( sphere2 );
 		
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
 		//var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
