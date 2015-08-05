@@ -18,7 +18,7 @@ define([
 		renderer = new THREE.WebGLRenderer();
 		renderer.setPixelRatio( window.devicePixelRatio );
 		renderer.setSize( w, h );
-		renderer.setClearColor( 0xffffff );
+		renderer.setClearColor( 0 );
 		var ele = $("#" + id);
 		ele.append(renderer.domElement);
 
@@ -27,9 +27,21 @@ define([
 
 		scene = new THREE.Scene();
 
-		var geometry = new THREE.SphereGeometry( 5, 32, 32 ); 
-		var material = new THREE.MeshBasicMaterial( {color: 0xffff00} ); 
+		var geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
+		var material = new THREE.MeshBasicMaterial( {color: 0xff0000} ); 
 		var sphere = new THREE.Mesh( geometry, material ); 
+		scene.add( sphere );
+
+		geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
+		material = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
+		sphere = new THREE.Mesh( geometry, material ); 
+		sphere.position = new THREE.Vector3( 200, 0, 0 );
+		scene.add( sphere );
+		
+		geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
+		material = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
+		sphere = new THREE.Mesh( geometry, material ); 
+		sphere.position = new THREE.Vector3( 300, 0, 0 );
 		scene.add( sphere );
 		
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
