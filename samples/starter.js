@@ -26,24 +26,34 @@ define([
 		camera.position.z = 1000;
 
 		scene = new THREE.Scene();
-
-		var geometry = new THREE.SphereGeometry( 50, 32, 32 ); 
-		var material = new THREE.MeshBasicMaterial( {color: 0xff0000} ); 
-		var sphere = new THREE.Mesh( geometry, material ); 
-		scene.add( sphere );
-
-		var geometry1 = new THREE.SphereGeometry( 50, 32, 32 ); 
-		var material1 = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
-		var sphere1 = new THREE.Mesh( geometry1, material1 ); 
-		scene.add( sphere1 );
-		sphere1.position.setX(100);
 		
-		var geometry2 = new THREE.SphereGeometry( 50, 32, 32 ); 
-		var material2 = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
-		var sphere2 = new THREE.Mesh( geometry2, material2 ); 
-		scene.add( sphere2 );
-		sphere2.position.setX(-100);
+		var planets = [
+		  { 
+		    size: 50,
+		    color: 0xff0000,
+		    position: { x:0, y:0, z:0}
+		  },
+		  { 
+		    size: 50,
+		    color: 0x00ff00,
+		    position: { x:150, y:0, z:0}
+		  },
+		  { 
+		    size: 50,
+		    color: 0x0000ff,
+		    position: { x:-150, y:0, z:0}
+		  }
+		]
 		
+		for (i=0; i<planets.length; i++) {
+		  var planet = planets[i];
+  		  var geometry = new THREE.SphereGeometry( planet.size, 32, 32 ); 
+		  var material = new THREE.MeshBasicMaterial( {color: planet.color} ); 
+		  var sphere = new THREE.Mesh( geometry, material ); 
+		  scene.add( sphere );
+ 		  sphere.position.setX(planet.position.x);
+		}
+
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
 		//var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
 		//texture.anisotropy = renderer.getMaxAnisotropy();
