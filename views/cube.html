@@ -1,6 +1,6 @@
 <div>
   <p>{{model.test.title}}</p>
-  <button ng-hide="model.sceneStarted || env.env != 'web'" class="btn-default btn btn-sm streamz-card-btn" ng-click="moduleEvent('git/webgl/master/samples/starter','startScene','wgl-cube', card)">Load Cube</button>
-  <button ng-hide="model.sceneStarted || env.env != 'mobile'" class="button-clear streamz-card-button" ng-click="moduleEvent('git/webgl/master/samples/starter','startScene','wgl-cube', card)">Load Cube</button>
+  <button ng-hide="model.sceneStarted || env.env != 'web'" class="btn-default btn btn-sm streamz-card-btn" ng-click="moduleEvent('git/webgl/master/samples/starter','startScene','wgl-cube', card)">Load Scene</button>
+  <button ng-hide="model.sceneStarted || env.env != 'mobile'" class="button-clear streamz-card-button" ng-click="moduleEvent('git/webgl/master/samples/starter','startScene','wgl-cube', card)">Load Scene</button>
   <div id="wgl-cube"></div>
 </div>
