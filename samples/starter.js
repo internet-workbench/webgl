@@ -35,14 +35,14 @@ define([
 		var geometry1 = new THREE.SphereGeometry( 50, 32, 32 ); 
 		var material1 = new THREE.MeshBasicMaterial( {color: 0x00ff00} ); 
 		var sphere1 = new THREE.Mesh( geometry1, material1 ); 
-		sphere1.position = new THREE.Vector3( 100, 0, 0 );
 		scene.add( sphere1 );
+		sphere1.position.setX(100);
 		
 		var geometry2 = new THREE.SphereGeometry( 50, 32, 32 ); 
 		var material2 = new THREE.MeshBasicMaterial( {color: 0x0000ff} ); 
 		var sphere2 = new THREE.Mesh( geometry2, material2 ); 
-		sphere2.position = new THREE.Vector3( -100, 0, 0 );
 		scene.add( sphere2 );
+		sphere2.position.setX(-100);
 		
 		//THREE.ImageUtils.crossOrigin = 'anonymous';
 		//var texture = THREE.ImageUtils.loadTexture( prefix + 'textures/crate.gif' );
